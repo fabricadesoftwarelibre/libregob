@@ -1,16 +1,29 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from odoo.exceptions import UserError
 
 
 class AccountInvoice(models.Model):
     _inherit = ['account.invoice']
 
     # Campos de idenfificación de la factura.
-    secuencial = fields.Integer(string="Secuencial", )
-    establecimiento = fields.Integer(string="Establecimiento", )
-    puntoemision = fields.Integer(string="Punto de emisión", )
+    secuencial = fields.Char(string="Secuencial", )
+    establecimiento = fields.Char(string="Establecimiento", )
+    puntoemision = fields.Char(string="Punto de emisión", )
     autorizacion = fields.Char(string="Autorizacion", )
+    #Formulas de validaciòn
+    @api.multi
+    @api.onchange('establecimiento')
+    def _onchange_establecimiento(self):
+        for r in self:
+            estab = self.establecimiento
+            try:
+                if int(estab) > 0:
+                   self.establecimiento = estab.zfill(3) 
+            except ValueError:
+                raise UserError('El establecimiento debe ser valor numerico mayor a cero')
+
 
     # Campos de subtotales de la factura.
     basenograiva = fields.Monetary(
