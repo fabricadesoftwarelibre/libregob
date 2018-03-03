@@ -22,7 +22,7 @@ Créditos
 
 Personas que han contribuido:
 - Daniel Alejandro Mendieta <damendieta@libre.ec>
-
+- Julio Oña <julioona@gmail.com>
 
 Responsables
 ------------
