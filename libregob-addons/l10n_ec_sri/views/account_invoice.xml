@@ -9,6 +9,7 @@
 		<field name="establecimiento"/>
 		<field name="puntoemision"/>
 		<field name="autorizacion"/>
+                <field name="secuencial"/>
 	    </field>
 	    <field name="amount_untaxed" position="replace">
 		<field name="amount_untaxed" invisible="1"/>
