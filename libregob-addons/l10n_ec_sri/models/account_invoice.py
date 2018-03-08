@@ -17,12 +17,31 @@ class AccountInvoice(models.Model):
     @api.onchange('establecimiento')
     def _onchange_establecimiento(self):
         for r in self:
-            estab = self.establecimiento
-            try:
-                if int(estab) > 0:
-                   self.establecimiento = estab.zfill(3) 
-            except ValueError:
-                raise UserError('El establecimiento debe ser valor numerico mayor a cero')
+            estab = r._check_sri_fields(r.establecimiento, 3)
+            r.establecimiento = estab
+    
+    @api.multi
+    @api.onchange('puntoemision')
+    def _onchange_puntoemision(self):
+        for r in self:
+            #import wdb
+            #wdb.set_trace()
+            puntoemision = r._check_sri_fields(r.puntoemision, 3)
+            r.puntoemision = puntoemision
+
+    @api.multi
+    @api.onchange('secuencial')
+    def _onchange_secuencial(self):
+        for r in self:
+            secuencial = r._check_sri_fields(r.secuencial, 9)
+            r.secuencial = secuencial
+
+    def _check_sri_fields(self, val, z):
+        try:
+            if int(val) > 0:
+                return val.zfill(z) 
+        except ValueError:
+            raise UserError('El valor ingresado debe ser mayor a cero')
 
 
     # Campos de subtotales de la factura.
