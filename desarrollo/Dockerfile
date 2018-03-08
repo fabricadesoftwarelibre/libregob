@@ -6,7 +6,7 @@ USER root
 
 # Instalamos las librerias de desarrollo.
 RUN set -x; \
-        pip3 install watchdog
+        pip3 install watchdog wdb
 # Agregamos libregob-addons a los volumens.
 VOLUME ["/mnt/libregob-addons"]
  
