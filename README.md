@@ -5,11 +5,22 @@ LibreGOB es un Planificador de Recursos Gubernamentales (GRP) basado en <a href=
 
 Una vez que hemos instalado uno de los sistemas operativos soportados, procedemos a instalar las dependencias, a continuación ejemplificamos la forma más sencilla de instalación, si desea información más completa o actualizada, puede remitirse a las guías oficiales de cada aplicativo:
 
-Instalamos [Git](https://git-scm.com/)
+Instalamos las dependencias:
+
+[Git](https://git-scm.com/)
 
 ```console
 foo@bar:~$ apt install git
 ```
+
+Configuramos git.
+
+```console
+foo@bar:~$ git config --global user.name "Nombre de su usario de Minka"
+foo@bar:~$ git config --global user.email correodelusuariode@minka.gob.ec
+foo@bar:~$ git config --global push.default simple
+```
+
 [Docker](https://www.docker.com/)
 
 ```console
@@ -55,6 +66,8 @@ foo@bar:~$ docker-compose -f desarrollo.yml up
 Al ejecutarlo, debemos esperar unos segundos hasta que el contenedor de la base de datos indíque que se encuentra lista y aceptando conexiones.
 
 Podrémos acceder a nuestro nuevo entorno de desarrollo ingresando a la dirección `localhost:8069` en nuestro navegador, la contraseña del administrador, que nos permitirá crear, duplicar y modificar bases de datos es `libregob`
+
+Para mayor información sobre el uso de las herramientas de desarrollo, remítase al archivo readme del repositorio [libregob-desarrollo](https://minka.gob.ec/fabricadesoftwarelibre/libregob-desarrollo/).
 
 ## Módulos.
 ### l10n_ec_sri
