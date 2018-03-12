@@ -56,20 +56,26 @@ foo@bar:~$ git remote add upstream https://minka.gob.ec/fabricadesoftwarelibre/l
 
 ## Entorno de desarrollo.
 
-Si hemos seguido los pasos de instalación de manera exacta, podrémos levantar nuestro entorno de desarrollo de la siguiente manera:
-
-```console
-foo@bar:~$ cd ~/Repositorios/fabricadesoftwarelibre/libregob-desarrollo
-foo@bar:~$ docker-compose -f desarrollo.yml up
-```
-
-Al ejecutarlo, debemos esperar unos segundos hasta que el contenedor de la base de datos indíque que se encuentra lista y aceptando conexiones.
-
-Podrémos acceder a nuestro nuevo entorno de desarrollo ingresando a la dirección `localhost:8069` en nuestro navegador, la contraseña del administrador, que nos permitirá crear, duplicar y modificar bases de datos es `libregob`
-
-Para mayor información sobre el uso de las herramientas de desarrollo, remítase al archivo readme del repositorio [libregob-desarrollo](https://minka.gob.ec/fabricadesoftwarelibre/libregob-desarrollo/).
+El proyecto LibreGOB aporta varias herramientas para que nuestra curva de aprendizaje sea corta y podamos empezar a trabajar de manera rápida con nuestro sistema, para conocer sobre ellas, visíte el repositorio [libregob-desarrollo](https://minka.gob.ec/fabricadesoftwarelibre/libregob-desarrollo/).
 
 ## Módulos.
 ### l10n_ec_sri
 
 Este módulo es la base para la localización contable/tributaria de Ecuatori, se enfoca en cumplir con los requerimientos del Servicio de Rentas Internas, facilitando la tributación en Ecuador.
+
+### l10n_ec_sri_rce
+
+Este módulo permite importar datos de los documentos electrónicos recibidos, como la fecha, el número de autorización, establecimiento, punto de emisión, entre otros.
+
+### l10n_ec_hr_payroll
+
+Este módulo contiene las reglas y estructuras salariales, así como otras modificaciones que que permiten realizar el cálculo de la nómina en base a la legislación ecuatoriana.
+
+Contiene la reglas salariales para:
+
+1. Décimo tercera remuneración.
+2. Décimo cuarta remuneración.
+3. Provisión de vacaciones.
+4. Aporte personal y patronal al IESS.
+
+
