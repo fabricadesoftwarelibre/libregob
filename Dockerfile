@@ -58,6 +58,10 @@ RUN set -x; \
         httpagentparser \
         phonenumbers
 
+# Creamos el usuario odoo y el grupo odoo con ids específicos.
+RUN groupadd -r odoo --gid=1000 && useradd -r -g odoo --uid=1000 odoo
+
+
 # Creamos el directorio libregob-addons
 RUN mkdir -p /mnt/libregob-addons
 COPY ./libregob-addons /mnt/libregob-addons/
