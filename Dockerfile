@@ -54,6 +54,7 @@ RUN set -x; \
         cachetools \
         pdfconv \
         oca-decorators \
+        openupgradelib \
         httpagentparser \
         phonenumbers
 
