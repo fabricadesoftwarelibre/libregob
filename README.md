@@ -58,6 +58,10 @@ foo@bar:~$ git remote add upstream https://minka.gob.ec/fabricadesoftwarelibre/l
 
 El proyecto LibreGOB aporta varias herramientas para que nuestra curva de aprendizaje sea corta y podamos empezar a trabajar de manera rápida con nuestro sistema, para conocer sobre ellas, visíte el repositorio [libregob-desarrollo](https://minka.gob.ec/fabricadesoftwarelibre/libregob-desarrollo/).
 
+## Editor de texto.
+
+Para mejorar la eficiencia de nuestro desarrollo y facilitar el trabajo de nuestros colaboradores hemos creado [libregob-nvim](https://minka.gob.ec/fabricadesoftwarelibre/libregob-nvim). Este proyecto nos permite tener un editor de texto eficiente y ágil, con atajos que nos permiten trabajar en nuestros archivos de python y xml de manera sencilla. Está basado en [NeoVim](https://neovim.io/).
+
 ## Módulos.
 ### l10n_ec_sri
 
